@@ -4,6 +4,7 @@ import java.text.MessageFormat;
 
 import static com.penniless.common.exception.Constants.MESSAGE_DUPLICATE_ENTITY;
 import static com.penniless.common.exception.Constants.MESSAGE_ENTITY_NOT_FOUND;
+import static com.penniless.common.exception.Constants.MESSAGE_ENTITY_NOT_FOUND_2;
 import static com.penniless.common.exception.Constants.MESSAGE_INTERNAL_SERVER_ERROR;
 import static com.penniless.common.exception.Constants.MESSAGE_UNAUTHORIZED;
 
@@ -21,6 +22,8 @@ public class PWException {
     switch (exceptionType) {
       case ENTITY_NOT_FOUND:
         return new EntityNotFoundException(MessageFormat.format(MESSAGE_ENTITY_NOT_FOUND, entityType.getValue(), args));
+      case ENTITY_NOT_FOUND_2:
+        return new EntityNotFoundException(MessageFormat.format(MESSAGE_ENTITY_NOT_FOUND_2, entityType.getValue(), args));
       case DUPLICATE_ENTITY:
         return new DuplicateEntityException(MessageFormat.format(MESSAGE_DUPLICATE_ENTITY, entityType.getValue(), args));
       case UNAUTHORIZED:
